@@ -1,4 +1,4 @@
-import numpy as numpy
+import numpy as np
 from math import exp,log
 from scipy.special import psi
 

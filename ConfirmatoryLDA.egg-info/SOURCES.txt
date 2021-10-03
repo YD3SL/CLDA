@@ -5,6 +5,7 @@ pyproject.toml
 setup.py
 ConfirmatoryLDA/CLDA.py
 ConfirmatoryLDA/__init__.py
+ConfirmatoryLDA/evaluation.py
 ConfirmatoryLDA/utils.py
 ConfirmatoryLDA.egg-info/PKG-INFO
 ConfirmatoryLDA.egg-info/SOURCES.txt

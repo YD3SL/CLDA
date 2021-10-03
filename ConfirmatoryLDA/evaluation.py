@@ -3,13 +3,16 @@ from collections import Counter
 from itertools import combinations
 from scipy.spatial.distance import cosine
 
-w2v_dir = input("Please enter directory of word2vec model")
+w2v_dir = input("Please enter directory of word2vec model \n")
 word2vec_model = gensim.models.keyedvectors.KeyedVectors.load_word2vec_format(
     w2v_dir, binary=True
 )
 
 def WTC(df,N):
     """Within Topic Coherence Measure.
+
+        [Note]
+        It ignores a word which does not have trained word vector.
 
         Parameters
         ----------
@@ -43,6 +46,9 @@ def WTC(df,N):
 
 def BTC(df,N):
     """Between Topic Coherence Measure.
+
+        [Note]
+        It ignores a word which does not have trained word vector.
 
         Parameters
         ----------
