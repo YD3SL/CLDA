@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+ConfirmatoryLDA/CLDA.py
+ConfirmatoryLDA/__init__.py
+ConfirmatoryLDA/utils.py
+ConfirmatoryLDA.egg-info/PKG-INFO
+ConfirmatoryLDA.egg-info/SOURCES.txt
+ConfirmatoryLDA.egg-info/dependency_links.txt
+ConfirmatoryLDA.egg-info/requires.txt
+ConfirmatoryLDA.egg-info/top_level.txt
