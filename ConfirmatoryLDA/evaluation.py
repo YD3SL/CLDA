@@ -1,4 +1,5 @@
 import gensim
+import pandas as pd
 from collections import Counter
 from itertools import combinations
 from scipy.spatial.distance import cosine

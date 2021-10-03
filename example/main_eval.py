@@ -1,4 +1,6 @@
 from ConfirmatoryLDA.evaluation import WTC, BTC, TOP_N_WORDS_df
+import pickle
+from sklearn.feature_extraction.text import CountVectorizer
 
 # directory of word2vec model
 # /Users/shinbo/Desktop/metting/LDA/paper/word_embedding/GoogleNews-vectors-negative300.bin/GoogleNews-vectors-negative300.bin
@@ -18,8 +20,8 @@ X = cv.fit_transform(data_join).toarray()
 dir_model = '/Users/shinbo/Desktop/metting/LDA/paper/experiments/hotel/model/CDMM_result.pkl'
 DMM_CLDA = pickle.load(open(dir_model,'rb'))
 DMM_CLDA_lam =  [DMM_CLDA.components_[k,:] for k in range(4)]
-TOP_N_WORDS = 100
-DMM_CLDA_Top_words = TOP_N_WORDS_df(DMM_CLDA, TOP_N_WORDS, ['price','food','drink','service'])
+N = 100
+DMM_CLDA_Top_words = TOP_N_WORDS_df(DMM_CLDA, N, ['price','food','drink','service'])
 
 # WTC
 print(WTC(DMM_CLDA_Top_words,N))

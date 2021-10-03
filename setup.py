@@ -9,7 +9,7 @@ with open("README.md", 'r') as f:
 
 setup(
     name="ConfirmatoryLDA",
-    version="0.0.3",
+    version="0.0.4",
     packages=find_packages(),
     author="JongHo Im",
     description="A summarizing method for topic model",
