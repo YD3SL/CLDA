@@ -99,9 +99,11 @@ def BTC(df,N):
     btc = []
 #     print(result)
     for topic in result.keys():
-        btc.append(sum(result[topic]))
+        tmp = 0
         for word in result[topic].keys():
             val += result[topic][word]
+            tmp += result[topic][word]
+        btc.append(tmp)
 #     print(val)
     return btc
 
