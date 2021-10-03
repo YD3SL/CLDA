@@ -103,3 +103,29 @@ def BTC(df,N):
             val += result[topic][word]
 #     print(val)
     return btc
+
+def TOP_N_WORDS_df(MODEL, TOP_N_WORDS, col_names, cv):
+    """TOP N words from word-topic distribution
+
+        Parameters
+        ----------
+        MODEL : LDA or CLDA model
+
+        TOP_N_WORDS : Number of top N words 
+
+        col_names : names of each topic
+
+        cv: CountVectorizer object used in LDA model
+
+        Returns
+        -------
+        result : N * K dataframe which shows top N words of each topic
+
+    """
+    result = pd.DataFrame()
+    for i in range(4):
+        temp = pd.DataFrame({'words':cv.get_feature_names(), 'lambda':MODEL.components_[i,:]})
+        temp = temp.sort_values(by='lambda', ascending=False).iloc[:TOP_N_WORDS,:]
+        result[i] = temp['words'].tolist()
+    result.columns = col_names
+    return result
